@@ -1,0 +1,16 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    { "id": "file2.txt" },
+    { "id": "file3.txt" },
+    { "id": "file1.txt" },
+    { "id": "file4.txt" }
+  ],
+  "links": [
+    { "source": "file2.txt", "target": "file4.txt" },
+    { "source": "file1.txt", "target": "file3.txt" },
+    { "source": "file1.txt", "target": "file2.txt" }
+  ]
+}
