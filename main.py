@@ -1,5 +1,7 @@
 import os
 import networkx as nx
+from networkx.readwrite import json_graph
+import json
 
 def set_of_files(search_path):
     result = {}
@@ -33,5 +35,8 @@ if __name__ == '__main__':
             if look_for_file(child, fullpath):
                 edges.add((parent, child))
     graph = create_graph(nodes, edges)
-    nx.write_gexf(graph, "./test/test.gexf")
-    # print(edges)
+    nx.write_gexf(graph, "./graphs/test.gexf")
+    # export to json for D3.js
+    data1 = json_graph.node_link_data(graph)
+    with open("./graphs/test.json", 'w') as outfile:
+        json.dump(data1, outfile)
